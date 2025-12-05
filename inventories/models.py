@@ -28,7 +28,7 @@ class Shelve(models.Model):
 class Inventory(models.Model):
     id_inventory = models.AutoField(primary_key=True)
     id_product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    id_warehouse = models.ForeignKey(Warehouse, on_delete=models.CASCADE)
+    id_warehouse = models.ForeignKey(Warehouse, on_delete=models.CASCADE, null=True)
     id_shelve = models.ForeignKey(Shelve, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     creation_date = models.DateTimeField(auto_now_add=True)
